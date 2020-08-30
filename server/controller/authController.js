@@ -22,12 +22,16 @@ module.exports = {
         const db = req.app.get('db')
         const{email, password} = req.body
         let user = await db.users.get_users(email)
+        console.log(user)
         if(!user[0]){
-            res.status(400).send('user not found')
+         return  res.status(401).send('user not found')
         }
         const authenticated = bcrypt.compareSync(password, user[0].password)
         if(!authenticated){
             res.status(401).send('Password incorrect')
+        } else {
+            req.session.user = {user_id: user[0].user_id, email: user[0].email}
+            res.status(200).send(req.session.user)
         }
     },
 

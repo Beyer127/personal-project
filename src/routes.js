@@ -6,8 +6,10 @@ import Posts from './components/Posts/Posts'
 
 export default (
     <Switch>
-        <Route exact path='/' component={Auth} />
-        <Route  path='/dashboard' component={Dashboard} />
-        <Route path='/posts' component={Posts} />
+    <nav className="nav">
+            <Route exact path='/' component={Auth} />
+            <Route  path='/dashboard' component={Dashboard} />
+            <Route path='/posts' component={Posts} />
+            </nav>
     </Switch>
 )

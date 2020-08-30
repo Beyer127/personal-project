@@ -1,32 +1,42 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import axios from 'axios'
 
-class Posts extends Component {
+class Posts extends Component{
     constructor(){
         super()
 
         this.state = {
-            itemName: '',
-            image: '' ,
-            price: 2,
-            description: ''
+            posts: []
         }
     }
 
     componentDidMount(){
-        axios.get('/api/item/:id').then(res =>{
+        axios.get('/api/items').then(items => {
             this.setState({
-                itemName: res.data.itemName,
-                image: res.data.image,
-                price: res.data.num,
-                description: res.data.description
+                items: items.data
             })
         })
     }
 
+    deleteItem = (id) => {
+        axios.delete(`/api/items/${id}`).then((item) => {
+            this.setState({item: item.data})
+        })
+    }
+
+    changeHandler(){
+        
+    }
+
     render(){
+        console.log(this.state.item)
+        const newItem = this.state.posts.map((e, i) => {
+            return <item deleteItem={this.deleteItem} key={i} data={e} />
+        })
         return(
-            <div>Posts page</div>
+            <div>
+                {newItem}
+            </div>
         )
     }
 }

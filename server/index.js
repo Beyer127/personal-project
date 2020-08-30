@@ -5,7 +5,7 @@ const session = require('express-session')
 const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
 
 const authCtrl = require('./controller/authController')
-const itemCtrl = require('./controller/productCtrl')
+const itemCtrl = require('./controller/itemCtrl')
 const cartCtrl = require('./controller/cartCtrl')
 
 const app = express()

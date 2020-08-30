@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './Dashboard.css'
 
 class Dashboard extends Component {
     constructor(){
@@ -18,8 +19,8 @@ class Dashboard extends Component {
 
     render(){
         return(
-            <div>Dashboard
-             
+            <div>
+                <div className='main' src='https://www.ppavigil.org/wp-content/uploads/2018/05/BUY-2-300x157.png' ></div>
             </div>
         )
     }
