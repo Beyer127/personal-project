@@ -1,4 +1,11 @@
-.main{
+.main-div{
     width: 100vw;
-    background-image: url(https://www.mobilephonegeeks.com/wp-content/uploads/2015/09/buyselltrade.jpg);
+    height: 40vh;
+    background-color: rgb(113, 113, 131);
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    margin-top: 52px;
 }

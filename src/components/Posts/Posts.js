@@ -1,17 +1,18 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import AddPost from './AddPost/AddPost'
 
 class Posts extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state = {
-            posts: []
+            items: []
         }
     }
 
     componentDidMount(){
-        axios.get('/api/items').then(items => {
+        axios.get('/api/item').then(items => {
             this.setState({
                 items: items.data
             })
@@ -19,19 +20,20 @@ class Posts extends Component{
     }
 
     deleteItem = (id) => {
-        axios.delete(`/api/items/${id}`).then((item) => {
+        axios.delete(`/api/item/${id}`).then((item) => {
             this.setState({item: item.data})
         })
     }
 
-    changeHandler(){
-        
-    }
-
     render(){
-        console.log(this.state.item)
-        const newItem = this.state.posts.map((e, i) => {
-            return <item deleteItem={this.deleteItem} key={i} data={e} />
+        const newItem = this.state.items.map((e, i) => {
+            return <div key={i}>
+                <h1>{e.item_name}</h1>
+                <img src={e.image}/>
+                <h2>{e.price}</h2>
+                <p>{e.description}</p>
+                
+            </div>
         })
         return(
             <div>

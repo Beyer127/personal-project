@@ -19,9 +19,11 @@ class Dashboard extends Component {
 
     render(){
         return(
-            <div>
-                <div className='main' src='https://www.ppavigil.org/wp-content/uploads/2018/05/BUY-2-300x157.png' ></div>
-            </div>
+            <section>
+                <div>
+                     <img src="https://www.ppavigil.org/wp-content/uploads/2018/05/BUY-2-300x157.png"/>
+                </div>
+            </section>
         )
     }
 }

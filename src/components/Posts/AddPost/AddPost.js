@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './AddPost.css'
 
 class AddPost extends Component {
     constructor(){
@@ -16,8 +17,8 @@ class AddPost extends Component {
 
     addPost = (itemName, image, price, description) => {
         axios.post('/api/item', {itemName, image, price, description}).then((res) => {
-            this.setState = ({itemName: res.data, image: res.data, price: res.data, description: res.description}) 
-            this.props.history.push('/dashboard')   
+            this.setState = ({itemName: res.data, image: res.data, price: res.data, description: res.data}) 
+            this.props.history.push('/posts')   
         }).catch(err => console.log(err))
     }
 
@@ -36,26 +37,25 @@ class AddPost extends Component {
 
       editItem = (itemName, image, price, description, id) => {
         axios.put(`/api/shelfie/${id}`, {itemName, image, price, description, id}).then(() => {
-            this.props.history.push('/')
+            this.props.history.push('/dashboard')
         })
       }
     render(){
-        const {shelfie_image, description, price, edit} = this.state
-        console.log(this.props)
-    
+        const {itemName, image, price, description, id} = this.state    
         return(
-            <div className="form">
+            <div className="container">
                 <div className="input">
-                    <input onChange={(e) => this.handleChange(e)} placeholder="image" value={shelfie_image} name='shelfie_image' />
+                    <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
+                    <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
                 </div>
 
                 <div className="buttons">
-                    <button onClick={() => {this.addShelfie(shelfie_image, description, price)}}> Cancel</button>
-                    {edit?(
-                        <button onClick={() => this.editShelfie(shelfie_image, description, price, this.props.match.params.id)}>edit</button>
-                    ):<button onClick={() => {this.addShelfie(shelfie_image, description, price )}} >Add to inventory</button>}
+                    <button onClick={() => {this.addPost(itemName, image, price, description)}}> Cancel</button>
+                    {this.state.edit ?(
+                        <button onClick={() => this.editPost(itemName, image, price, description, this.props.match.params.id)}>edit</button>
+                    ):<button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>}
                 </div>
             </div>
         )

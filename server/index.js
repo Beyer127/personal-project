@@ -38,7 +38,7 @@ app.get('/auth/users', authCtrl.getUser)
 app.get('/api/item', itemCtrl.getItems)
 app.post('/api/item', itemCtrl.postItem)
 app.put('/api/item/:id', itemCtrl.editItem)
-app.delete('/api/item:id', itemCtrl.deleteItem)
+app.delete('/api/item/:id', itemCtrl.deleteItem)
 
 // app.get('/api/cart', cartCtrl.addItem)
 // app.delete('/api/cart', cartCtrl.deleteItem)

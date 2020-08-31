@@ -9,7 +9,7 @@ CREATE TABLE users (
 CREATE TABLE items (
     item_id SERIAL PRIMARY KEY,
     item_name TEXT,
-    image VARCHAR(300),
+    image VARCHAR(500),
     price INT,
     description TEXT
 );
