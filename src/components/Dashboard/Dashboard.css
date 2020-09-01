@@ -1,11 +1,21 @@
-.main-div{
-    width: 100vw;
-    height: 40vh;
-    background-color: rgb(113, 113, 131);
-    display: flex;
-    justify-content: center;
-}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+  }
+  
+  a{
+    color: #333;
+    text-decoration: none;
+  }
 
-img{
-    margin-top: 52px;
-}
+  nav{
+      margin: 0 auto;
+      padding: 0;
+  }
+  

@@ -5,7 +5,7 @@ import routes from './routes'
 function App() {
   return (
     <div className="App">
-      <nav></nav>
+      <nav>Craig's List Killers</nav>
       {routes}
     </div>
   );

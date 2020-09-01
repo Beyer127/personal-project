@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import Auth from './components/Auth/Auth'
 import Posts from './components/Posts/Posts'
 import AddPost from './components/Posts/AddPost/AddPost'
+import Cart from './components/Cart/Cart'
 
 export default (
     <Switch>
@@ -11,5 +12,6 @@ export default (
             <Route  path='/dashboard' component={Dashboard} />
             <Route path='/addPost' component={AddPost} />
             <Route path='/posts' component={Posts} />
+            <Route path='/cart' component={Cart} />
     </Switch>
 )

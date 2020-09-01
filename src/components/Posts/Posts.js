@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import AddPost from './AddPost/AddPost'
+import './Posts.css'
+import './AddPost/Card.css'
 
 class Posts extends Component{
     constructor(props){
@@ -27,13 +28,17 @@ class Posts extends Component{
 
     render(){
         const newItem = this.state.items.map((e, i) => {
-            return <div key={i}>
-                <h1>{e.item_name}</h1>
-                <img src={e.image}/>
-                <h2>{e.price}</h2>
-                <p>{e.description}</p>
-                
-            </div>
+            return (
+                <div className='card text-center'>
+                    <div className='overflow'>
+                        <img src={e.image} className='card-img-top'/>
+                        <h2>{e.itemName}</h2>
+                        <h4>{e.price}</h4>
+                        <p>{e.description}</p>
+                        <button onClick={() => {this.deleteItem(this.props.delete_item)}}>Delete</button>
+                    </div>
+                </div>
+            )
         })
         return(
             <div>
