@@ -1,5 +1,21 @@
 nav {
     width: 100vw;
-    height: 5vh;
-    background-color: lightgray
+    height: 12vh;
+    font-family: 'Fredoka One', cursive;;
+    background-color: lightgray;
+    font-size: 18px;
+    padding: 15px
+}
+
+span{
+    float: right;
+    padding: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+     
 }

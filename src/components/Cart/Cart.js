@@ -6,14 +6,16 @@ class Cart extends Component{
         super()
 
         this.state = {
-
+            cartItems: []
         }
     }
+
+   
 
     render(){
         return(
             <div>
-                Cart Page
+                
             </div>
         )
     }

@@ -19,11 +19,14 @@ class Dashboard extends Component {
 
     render(){
         return(
-            <section>
-                <div>
-                     <img src="https://www.ppavigil.org/wp-content/uploads/2018/05/BUY-2-300x157.png"/>
-                </div>
-            </section>
+                <>
+                    <div className="background">
+                        <button className="buttons" src="http://localhost:3000/#/addPost">Post Item</button>
+                        <button className="buttons" src="http://localhost:3000/#/item">Shop</button>
+                     <div className="buttons">
+                    </div>
+                     </div>
+                </>
         )
     }
 }
