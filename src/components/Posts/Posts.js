@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import './Posts.css'
-import './AddPost/Card.css'
 
 class Posts extends Component{
     constructor(props){
@@ -21,21 +19,25 @@ class Posts extends Component{
     }
 
     deleteItem = (id) => {
+        console.log(id)
         axios.delete(`/api/item/${id}`).then((item) => {
-            this.setState({item: item.data})
+            this.setState({items: item.data})
         })
     }
 
     render(){
+        console.log(this.state.items)
         const newItem = this.state.items.map((e, i) => {
+            
             return (
-                <div className='card text-center'>
-                    <div className='overflow'>
-                        <img src={e.image} className='card-img-top'/>
+                <div key={e.item_id} className='card text-center'>
+
+                    <div>
+                        <img src={e.image} />
                         <h2>{e.itemName}</h2>
                         <h4>{e.price}</h4>
                         <p>{e.description}</p>
-                        <button onClick={() => {this.deleteItem(this.props.delete_item)}}>Delete</button>
+                        <button onClick={() => {this.deleteItem(e.item_id)}}>Delete</button>
                     </div>
                 </div>
             )

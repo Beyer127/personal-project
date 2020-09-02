@@ -7,6 +7,7 @@ module.exports = {
     },
 
     deleteItem: async (req, res) => {
+        console.log(req.params)
         const db = req.app.get('db')
         const {id} = req.params
         db.delete_one_from_cart(id).then(deletedItem => {

@@ -41,7 +41,7 @@ app.put('/api/item/:id', itemCtrl.editItem)
 app.delete('/api/item/:id', itemCtrl.deleteItem)
 
 app.get('/api/cart', cartCtrl.deleteItems)
-app.delete('/api/cart', cartCtrl.deleteItem)
+app.delete('/api/cart/:id', cartCtrl.deleteItem)
 
 
 app.listen(SERVER_PORT, () => console.log(`server connected on port ${SERVER_PORT}`))
