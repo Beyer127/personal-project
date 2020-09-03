@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import './AddPost'
+import './AddPost.css'
 
 class AddPost extends Component {
     constructor(){
@@ -44,6 +44,7 @@ class AddPost extends Component {
         const {itemName, image, price, description, id} = this.state    
         return(
             <div className="container">
+                <h1>Add Post</h1>
                 <div className="input">
                     <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />

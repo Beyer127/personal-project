@@ -17,6 +17,9 @@ CREATE TABLE items (
 CREATE TABLE cart (
     cart_item_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(user_id),
-    item_id INT REFERENCES items(item_id)
-
 );
+
+CREATE TABLE cart_item(
+    cart_item_id INT REFERENCES users(user_id),
+    item_id INT REFERENCES cart(cart_id)
+)

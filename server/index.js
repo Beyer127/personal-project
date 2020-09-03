@@ -41,6 +41,7 @@ app.put('/api/item/:id', itemCtrl.editItem)
 app.delete('/api/item/:id', itemCtrl.deleteItem)
 
 app.get('/api/cart', cartCtrl.deleteItems)
+app.post('/api/cart', cartCtrl.addToCart)
 app.delete('/api/cart/:id', cartCtrl.deleteItem)
 
 

@@ -1,5 +1,27 @@
+.container{
+    font-family: 'Fredoka One', cursive;
+    margin-top: 100px;
+    color: gray
+}
+
 .input{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 10px;
+}
+
+input{
+    padding: 5px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    border: none;
+    padding: 5px;
+    width: 25vw;
 }

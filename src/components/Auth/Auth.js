@@ -51,10 +51,10 @@ class Auth extends Component{
         const {firstName, lastName, email, password} = this.state
         return (
           <div className="container">
-              <h1>Login</h1>
                 {!this.state.newUser ? (
                   
                   <div id="inputs">
+                  <h1>Login</h1>
                     <input className="inputs"
                       name="email"
                       type="text"
@@ -69,13 +69,14 @@ class Auth extends Component{
                       placeholder="Password"
                       onChange={(e) => this.changeHandler(e)}
                     ></input>
-                    <div id="buttons">
-                      <button className="buttons" onClick={this.login}>Login</button>
-                      <button className="buttons" onClick={this.toggle}>Register</button>
+                    <div className="buttons">
+                      <button onClick={this.login}>Login</button>
+                      <button onClick={this.toggle}>Register</button>
                     </div>
                   </div>
                 ) : (
-                  <div>
+                  <div id="inputs">
+                    <h1>Register</h1>
                     <input className="inputs"
                       name="firstName"
                       type="text"
@@ -107,9 +108,9 @@ class Auth extends Component{
                       placeholder="Password"
                       onChange={(e) => this.changeHandler(e)}
                     ></input>
-                    <div id="buttons">
-                      <button className="buttons" onClick={this.register}>Register</button>
-                      <button className="buttons" onClick={this.toggle}>Already A User</button>
+                    <div className="buttons">
+                      <button  onClick={this.register}>Register</button>
+                      <button onClick={this.toggle}>Already A User</button>
                     </div>
                   </div>
                 )}

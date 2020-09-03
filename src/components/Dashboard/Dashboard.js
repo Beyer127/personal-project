@@ -21,7 +21,7 @@ class Dashboard extends Component {
         return(
                 <>
                     <div className="background">
-                        <button className="buttons" src="http://localhost:3000/#/addPost">Post Item</button>
+                        <button className="buttons" src="http://localhost:3000/#/addpost">Post Item</button>
                         <button className="buttons" src="http://localhost:3000/#/item">Shop</button>
                      <div className="buttons">
                     </div>
