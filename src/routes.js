@@ -8,7 +8,7 @@ import Posts from './components/Posts/Posts'
 
 export default (
     <Switch>
-            <Route  path='/dashboard' component={Dashboard} />
+            <Route path='/dashboard' component={Dashboard} />
             <Route path='/addPost' component={AddPost} />
             <Route path='/posts' component={Posts} />
             <Route path='/cart' component={Cart} />

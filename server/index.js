@@ -26,6 +26,7 @@ massive({
 }).then(db => {
     app.set('db', db)
     console.log('connected to database')
+    app.listen(SERVER_PORT, () => console.log(`server connected on port ${SERVER_PORT}`))
 }).catch(err => {
     console.log(err)
 })
@@ -45,6 +46,5 @@ app.post('/api/cart', cartCtrl.addToCart)
 app.delete('/api/cart/:id', cartCtrl.deleteItem)
 
 
-app.listen(SERVER_PORT, () => console.log(`server connected on port ${SERVER_PORT}`))
 
 

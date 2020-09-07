@@ -2,10 +2,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Fredoka One', cursive;
   }
   
   body{
-    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
   }
   
@@ -16,14 +16,10 @@
 
   .background{
     background-image: url(https://images.unsplash.com/photo-1558888426-04826cfe6d6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
-    background-size: auto;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100vw;
     height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 
   img{
@@ -35,10 +31,13 @@
 
   .buttons{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     border: none;
     padding: 5px;
+    color: white;
   }
+
 
 
 

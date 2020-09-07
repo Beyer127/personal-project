@@ -21,10 +21,10 @@ class Dashboard extends Component {
         return(
                 <>
                     <div className="background">
-                        <button className="buttons" src="http://localhost:3000/#/addpost">Post Item</button>
-                        <button className="buttons" src="http://localhost:3000/#/item">Shop</button>
-                     <div className="buttons">
-                    </div>
+                        <div className="buttons">
+                            <button src="http://localhost:3000/#/addpost">Post Item</button>
+                            <button src="http://localhost:3000/#/item">Shop</button>
+                         </div>
                      </div>
                 </>
         )

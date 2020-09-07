@@ -53,10 +53,8 @@ class AddPost extends Component {
                 </div>
 
                 <div className="buttons">
-                    <button onClick={() => {this.addPost(itemName, image, price, description)}}> Cancel</button>
-                    {this.state.edit ?(
-                        <button onClick={() => this.editPost(itemName, image, price, description, this.props.match.params.id)}>edit</button>
-                    ):<button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>}
+                    <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
+                    <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
                 </div>
             </div>
         )
