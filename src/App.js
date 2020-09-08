@@ -4,7 +4,7 @@ import routes from './routes'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <nav>OFFER UP
          <i class="fas fa-shopping-cart"></i>
       <span><i class="fas fa-user"></i> <a className='link' href="http://localhost:3000/#/"> LOGIN</a></span>
@@ -15,6 +15,8 @@ function App() {
       <div className="body">
 
         {routes}
+
+
       </div>
       <div id='footer'>
         <span className="footer">HELP</span>

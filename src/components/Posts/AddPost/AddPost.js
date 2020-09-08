@@ -36,7 +36,7 @@ class AddPost extends Component {
       }
 
       editItem = (itemName, image, price, description, id) => {
-        axios.put(`/api/shelfie/${id}`, {itemName, image, price, description, id}).then(() => {
+        axios.put(`/api/edit/${id}`, {itemName, image, price, description, id}).then(() => {
             this.props.history.push('/dashboard')
         })
       }

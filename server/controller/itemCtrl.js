@@ -18,8 +18,10 @@ module.exports = {
     editItem: (req, res) => {
         const db = req.app.get('db')
         const {id} = req.params
+        console.log(id)
         const {item_name, image, price, description} = req.body
-        db.items.edit_item(item_name, image, price, description, {id}).then(item => {
+        db.items.edit_item(item_name, image, price, description, id).then(item => {
+            console.log(item)
             res.status(200).send(item)
         })
     },

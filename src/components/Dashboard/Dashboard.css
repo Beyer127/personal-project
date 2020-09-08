@@ -5,9 +5,6 @@
     font-family: 'Fredoka One', cursive;
   }
   
-  body{
-    line-height: 1.4;
-  }
   
   a{
     color: #333;
@@ -15,16 +12,19 @@
   }
 
   .background{
-    background-image: url(https://images.unsplash.com/photo-1558888426-04826cfe6d6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 50vh;
   }
 
-  img{
-    width: 60vw;
-    height: 35vh;
+  .first-img{
+    width: 100vw;
+    height: 50vh;
+    padding-bottom: 50px;
+  }
+
+  .second-img{
+    width: 100vw;
+    height: 65vh;
   }
 
 
@@ -32,7 +32,6 @@
   .buttons{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     border: none;
     padding: 5px;
     color: white;

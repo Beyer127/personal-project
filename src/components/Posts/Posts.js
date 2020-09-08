@@ -12,6 +12,11 @@ class Posts extends Component{
         super(props)
 
         this.state = {
+            itemName: '',
+            image: '',
+            price: '',
+            description: '',
+            edit: false,
             items: []
         }
     }
@@ -24,14 +29,22 @@ class Posts extends Component{
         })
     }
 
-    // deleteItem = (id) => {
-    //     console.log(id)
-    //     axios.delete(`/api/item/${id}`).then((item) => {
-    //         this.setState({items: item.data})
-    //     })
-    // }
+    componentDidMount(){
+        if(this.props.match.params.id){
+            this.setState({edit: true})
+        }
+    }
+    
+    editItem = (itemName, image, price, description, id) => {
+        console.log(itemName, image, price, description, id)
+        axios.put(`/api/item/${id}`, {itemName, image, price, description, id}).then(() =>{
+            this.props.history.push('/dashboard')
+        })
+    }
+
 
     render(){
+        const {itemName, image, price, description} = this.state
         console.log(this.state.items)
         const newItem = this.state.items.map((e, i) => {
             
@@ -45,20 +58,11 @@ class Posts extends Component{
                             <Card.Text>{e.description}</Card.Text>
                             <hr></hr>
                             <div id="buttons">
-                                <Button onClick={() => {this.deleteItem(e.item_id)}}>Edit</Button>
-                                {/* <Button onClick={() => {this.deleteItem(e.item_id)}}>Delete</Button> */}
+                                <Button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>Edit</Button>
                                 <Button onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
                             </div>
                         </Card.Body>
                         </Card>
-
-                    {/* <div>
-                        <img src={e.image} />
-                        <h2>{e.itemName}</h2>
-                        <h4>{e.price}</h4>
-                        <p>{e.description}</p>
-                        <button onClick={() => {this.deleteItem(e.item_id)}}>Delete</button>
-                    </div> */}
                 </div>
             )
         })
