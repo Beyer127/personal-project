@@ -5,6 +5,7 @@ import Auth from './components/Auth/Auth'
 import AddPost from './components/Posts/AddPost/AddPost'
 import Cart from './components/Cart/Cart'
 import Posts from './components/Posts/Posts'
+import EditPost from './components/EditPost'
 
 export default (
     <Switch>
@@ -12,6 +13,8 @@ export default (
             <Route path='/addPost' component={AddPost} />
             <Route path='/posts' component={Posts} />
             <Route path='/cart' component={Cart} />
+            <Route path='/editPost/:itemName/:image/:price/:description' component={EditPost} />
+            {/* <Route path='/editPost' component={EditPost} /> */}
             <Route exact path='/' component={Auth} />
     </Switch>
 )

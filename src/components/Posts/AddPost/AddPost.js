@@ -41,24 +41,23 @@ class AddPost extends Component {
         })
       }
     render(){
-        const {itemName, image, price, description, id} = this.state    
+        const {itemName, image, price, description} = this.state    
         return(
-            <div className="container">
-                <h1>Add Post</h1>
-                <div className="input">
-                    <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
-                    <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
-                    <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
-                    <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
+                <div>
+                    <div id="container">
+                        <div className="container">
+                            <h1>Add Post</h1>
+                        <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
+                        <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
+                        <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
+                        <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
+                        <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
+                        <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
+                        </div>
+                    </div>
                 </div>
-
-                <div className="buttons">
-                    <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
-                    <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
-                </div>
-            </div>
-        )
+            )
+        }
     }
-}
 
 export default AddPost

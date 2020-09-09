@@ -29,14 +29,13 @@ class Posts extends Component{
         })
     }
 
-    componentDidMount(){
-        if(this.props.match.params.id){
-            this.setState({edit: true})
-        }
-    }
+    // componentDidMount(){
+    //     if(this.props.match.params.id){
+    //         this.setState({edit: true})
+    //     }
+    // }
     
     editItem = (itemName, image, price, description, id) => {
-        console.log(itemName, image, price, description, id)
         axios.put(`/api/item/${id}`, {itemName, image, price, description, id}).then(() =>{
             this.props.history.push('/dashboard')
         })
@@ -44,7 +43,7 @@ class Posts extends Component{
 
 
     render(){
-        const {itemName, image, price, description} = this.state
+        // const {itemName, image, price, description, id} = this.state
         console.log(this.state.items)
         const newItem = this.state.items.map((e, i) => {
             
@@ -53,12 +52,12 @@ class Posts extends Component{
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={e.image} />
                         <Card.Body>
-                            <Card.Title>{e.itemName}</Card.Title>
+                            <Card.Title>{e.item_name}</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">${e.price}</Card.Subtitle>
                             <Card.Text>{e.description}</Card.Text>
                             <hr></hr>
                             <div id="buttons">
-                                <Button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>Edit</Button>
+                                <Button onClick={() => this.props.history.push(`/editPost/${e.item_name}/${e.image}/${e.price}/${e.description}`)}>Edit</Button>
                                 <Button onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
                             </div>
                         </Card.Body>

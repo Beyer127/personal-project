@@ -6,12 +6,6 @@ import {deleteFromCart} from '../../redux/reducer'
 
 
 class Cart extends Component{
-    constructor(){
-        super()
-
-    }
-
-   
 
     render(){
         console.log(this.props)
