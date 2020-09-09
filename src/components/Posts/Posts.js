@@ -5,6 +5,7 @@ import {Card} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 import {addToCart} from '../../redux/reducer'
 import {connect} from 'react-redux'
+import {editPost} from '../../redux/editReducer'
 
 
 class Posts extends Component{
@@ -41,6 +42,11 @@ class Posts extends Component{
         })
     }
 
+    handleEdit = (post) => {
+        this.props.editPost(post)
+        this.props.history.push('/editPost')
+    }
+
 
     render(){
         // const {itemName, image, price, description, id} = this.state
@@ -57,7 +63,7 @@ class Posts extends Component{
                             <Card.Text>{e.description}</Card.Text>
                             <hr></hr>
                             <div id="buttons">
-                                <Button onClick={() => this.props.history.push(`/editPost/${e.item_name}/${e.image}/${e.price}/${e.description}`)}>Edit</Button>
+                                <Button onClick={() => this.handleEdit(e)}>Edit</Button>
                                 <Button onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
                             </div>
                         </Card.Body>
@@ -75,4 +81,6 @@ class Posts extends Component{
     }
 }
 
-export default connect(null, {addToCart})(Posts)
+
+
+export default connect(null, {addToCart, editPost})(Posts)

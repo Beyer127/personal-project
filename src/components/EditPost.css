@@ -5,12 +5,13 @@
     font-family: 'Fredoka One', cursive;
   } 
 
-  
+ 
 
   h1{
       padding-top: 25px;
       color: rgb(73, 67, 67);
   }
+
   #input {
     display: flex;
     flex-direction: column;
@@ -27,8 +28,3 @@
       align-items: center;
       width: 25vw;
   }
-
-  
-
-
-

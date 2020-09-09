@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux';
+import {editPost} from './../redux/editReducer'
+import './EditPost.css'
 
 class EditPost extends Component {
     constructor(){
@@ -15,12 +18,12 @@ class EditPost extends Component {
         }
     }
 
-    // componentDidMount() {
-    //     const {itemName, image, price, description} = this.props.match.params
-    //     this.setState({
-    //         itemName, image, price, description
-    //     })
-    // }
+    componentDidMount() {
+        const {item_name, image, price, description} = this.props.editReducer.edit
+        this.setState({
+            itemName: item_name, image, price, description
+        })
+    }
 
     handleChange = (e) => {
         this.setState({
@@ -30,31 +33,39 @@ class EditPost extends Component {
 
       editItem = (itemName, image, price, description, id) => {
         axios.put(`/api/edit/${id}`, {itemName, image, price, description, id}).then(() => {
-            this.props.history.push('/dashboard')
+            this.props.history.push('/posts')
         })
       }
 
 
     render(){
-        const {itemName, image, price, description} = this.state    
+        const {itemName, image, price, description} = this.state  
+        console.log(this.props.editReducer)  
         return(
+
+            <div>
             <div className="container">
-                <h1>Add Post</h1>
-                <div className="input">
+                <h1>Edit Post</h1>
+                <div id="input">
                     <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
                 </div>
 
-                <div className="buttons">
-                    <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
-                    <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
+                <div id="button">
+                    <button onClick={() => this.props.history.push('/posts')} >cancel</button>
+                    <button onClick={() => this.editItem(itemName, image, price, description, this.props.editReducer.edit.id)}>edit</button>
                 </div>
+            </div>
             </div>
         )
     }
 }
 
-export default EditPost
+const mapStateToProps = (state) => {
+    return state
+}
+
+export default connect(mapStateToProps, {editPost}) (EditPost)
 

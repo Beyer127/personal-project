@@ -9,8 +9,8 @@ module.exports = {
 
     postItem: (req, res) => {
         const db = req.app.get('db')
-        const {name, image, price, description} = req.body
-        db.items.post_item([name, image, price, description]).then(item => {
+        const {itemName, image, price, description} = req.body
+        db.items.post_item([itemName, image, price, description]).then(item => {
             res.status(200).send(item)
         })
     },

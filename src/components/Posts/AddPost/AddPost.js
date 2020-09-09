@@ -44,15 +44,17 @@ class AddPost extends Component {
         const {itemName, image, price, description} = this.state    
         return(
                 <div>
-                    <div id="container">
-                        <div className="container">
-                            <h1>Add Post</h1>
+                        <h1>Add Post</h1>
+                    <div className="container">
+                        <div id="input">
                         <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
                         <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
                         <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
                         <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
-                        <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
-                        <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
+                        <div id="button">
+                            <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
+                            <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
+                        </div>
                         </div>
                     </div>
                 </div>
