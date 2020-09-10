@@ -5,19 +5,13 @@
     font-family: 'Fredoka One', cursive;
   }
 
-html{
-    height: 100%;
+h2{
+   float: left;
 }
 
-/* .body{
-    min-height: 100vh;
-} */
-
-
-nav{
+.main-header{
     display: flex;
-    justify-content: center;
-    align-items: baseline;
+    justify-content: flex-end;
     padding: 15px;
     width: 100vw;
     height: 12vh;
@@ -27,7 +21,10 @@ nav{
     color: white;
 }
 
-span{
+
+
+span, i{
+    display: flex;
     float: right;
     padding: 5px;
     padding-right: 5px;
@@ -60,6 +57,7 @@ min-height: 100%;
     height: 17vh;
     align-items: center;
     margin-top: auto;
+    position: fixed;
 
 }
 
@@ -71,6 +69,39 @@ min-height: 100%;
 
 .main{
     font-size: 21px;
+}
+
+.dropdown {
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .dropdown {
+        display: initial;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .mobile-menu{
+        display: initial;
+        background: #3B3B3B;
+        position: fixed;
+        top: 125px;
+        right: 0px;
+        height: 250px;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
 }
 
 

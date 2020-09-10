@@ -8,10 +8,9 @@ import {deleteFromCart} from '../../redux/reducer'
 class Cart extends Component{
 
     render(){
-        console.log(this.props)
         return(
             <div>
-                {this.props.cart.map(e => {
+                {this.props.userReducer.cart.map(e => {
                     return (
                        
                               <div key={e.item_id}>

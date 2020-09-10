@@ -42,10 +42,19 @@ class Posts extends Component{
         })
     }
 
+    deleteItem = (id) => {
+        axios.delete(`/api/item/${id}`).then(() => {
+            this.props.history.push('/posts')
+        })
+    }
+
+
     handleEdit = (post) => {
         this.props.editPost(post)
         this.props.history.push('/editPost')
     }
+
+
 
 
     render(){
@@ -65,6 +74,7 @@ class Posts extends Component{
                             <div id="buttons">
                                 <Button onClick={() => this.handleEdit(e)}>Edit</Button>
                                 <Button onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
+                                <Button onClick={() => this.deleteItem(e)}>Delete</Button>
                             </div>
                         </Card.Body>
                         </Card>
@@ -72,7 +82,7 @@ class Posts extends Component{
             )
         })
         return(
-            <div className="container col-lg-3">
+            <div className="container">
                 <div className="row">
                     {newItem}   
                 </div>

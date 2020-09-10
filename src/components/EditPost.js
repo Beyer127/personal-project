@@ -32,7 +32,7 @@ class EditPost extends Component {
       };
 
       editItem = (itemName, image, price, description, id) => {
-        axios.put(`/api/edit/${id}`, {itemName, image, price, description, id}).then(() => {
+        axios.put(`/api/item/${id}`, {itemName, image, price, description, id}).then(() => {
             this.props.history.push('/posts')
         })
       }
@@ -55,7 +55,7 @@ class EditPost extends Component {
 
                 <div id="button">
                     <button onClick={() => this.props.history.push('/posts')} >cancel</button>
-                    <button onClick={() => this.editItem(itemName, image, price, description, this.props.editReducer.edit.id)}>edit</button>
+                    <button onClick={() => this.editItem(itemName, image, price, description, this.props.editReducer.edit.item_id)}>edit</button>
                 </div>
             </div>
             </div>
