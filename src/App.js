@@ -20,23 +20,36 @@ class App extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="app">
         <div className="main-header">
     
-        <nav className="desktop-menu">OFFER UP
+            <span className="logo">OFFER UP</span>
+        <nav className="desktop-menu">
             <span><i className="fas fa-user"></i> <a className='link' href="http://localhost:3000/#/"> LOGIN</a></span>
             <span><i className="fas fa-user-plus"></i> <a className='link' href="http://localhost:3000/#/"> SIGN UP</a></span>
             <span><i className="fas fa-camera"></i> <a className='link' href="http://localhost:3000/#/addpost"> SELL</a></span>
             <span><i className="fas fa-money-check"></i> <a className='link' href="http://localhost:3000/#/posts"> SHOP</a></span>
         </nav>
-        <div className="dropdown" onClick={this.toggleDropDown}>Menu</div>
+        <div className="dropdown" onClick={this.toggleDropDown}><i class="fas fa-bars"></i></div>
         { this.state.dropDown ? (
             <nav className="mobile-menu">
               <a className='link' href="http://localhost:3000/#/"> LOGIN</a>
               <a className='link' href="http://localhost:3000/#/"> SIGN UP</a>
               <a className='link' href="http://localhost:3000/#/addpost"> SELL</a>
               <a className='link' href="http://localhost:3000/#/posts"> SHOP</a>
+
+         
+          <span className="footer">HELP</span>
+          <span className="footer">TERMS</span>
+          <span className="footer">PRIVACY</span>
+          <span className="footer main">OFFER UP</span>
+          <span className="footer">CONTACT</span>
+          <span className="footer">ABOUT</span>
+          <span className="footer">PRICING</span>
+         
           </nav>
+     
+
         ) : null }
         </div>
         <div className="body">

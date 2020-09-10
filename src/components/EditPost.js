@@ -45,17 +45,17 @@ class EditPost extends Component {
 
             <div>
             <div className="container">
-                <h1>Edit Post</h1>
                 <div id="input">
+                <h1>Edit Post</h1>
                     <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
                     <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
-                </div>
 
                 <div id="button">
-                    <button onClick={() => this.props.history.push('/posts')} >cancel</button>
                     <button onClick={() => this.editItem(itemName, image, price, description, this.props.editReducer.edit.item_id)}>edit</button>
+                    <button onClick={() => this.props.history.push('/posts')} >cancel</button>
+                </div>
                 </div>
             </div>
             </div>

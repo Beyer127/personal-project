@@ -12,6 +12,15 @@
     margin-bottom: 15vh;
 }
 
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    text-align: center;
+    height: 71vh;
+}
+
 .container{
     display: flex;
     flex-direction: row;
@@ -19,14 +28,18 @@
     margin-top: 10px;
     text-align: center;
     height: 71vh;
-    padding-bottom: 25px;
     
 }
 
 
-button{
+#buttons{
+    display: flex;
+    flex-direction: column;
     width: 15rem;
-    padding-top: 10px;
+}
+
+.button{
+    width: 100%;
 }
 
 hr {

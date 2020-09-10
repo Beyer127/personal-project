@@ -35,6 +35,14 @@ class Posts extends Component{
     //         this.setState({edit: true})
     //     }
     // }
+
+    getItems = () => {
+        axios.get('/api/item').then(items => {
+            this.setState({
+                items: items.data
+            })
+        })
+    }
     
     editItem = (itemName, image, price, description, id) => {
         axios.put(`/api/item/${id}`, {itemName, image, price, description, id}).then(() =>{
@@ -44,7 +52,7 @@ class Posts extends Component{
 
     deleteItem = (id) => {
         axios.delete(`/api/item/${id}`).then(() => {
-            this.props.history.push('/posts')
+            this.getItems()
         })
     }
 
@@ -64,7 +72,7 @@ class Posts extends Component{
             
             return (
                 <div key={e.item_id}>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem', height: '30rem'  }}>
                         <Card.Img variant="top" src={e.image} />
                         <Card.Body>
                             <Card.Title>{e.item_name}</Card.Title>
@@ -72,9 +80,9 @@ class Posts extends Component{
                             <Card.Text>{e.description}</Card.Text>
                             <hr></hr>
                             <div id="buttons">
-                                <Button onClick={() => this.handleEdit(e)}>Edit</Button>
-                                <Button onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
-                                <Button onClick={() => this.deleteItem(e)}>Delete</Button>
+                                <Button className="button" onClick={() => this.handleEdit(e)}>Edit</Button>
+                                <Button className="button" onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
+                                <Button className="button" onClick={() => this.deleteItem(e.item_id)}>Delete</Button>
                             </div>
                         </Card.Body>
                         </Card>
