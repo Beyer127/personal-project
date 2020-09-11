@@ -11,6 +11,11 @@ const cartCtrl = require('./controller/cartCtrl')
 const app = express()
 app.use(express.json())
 
+app.use( express.static( `${__dirname}/../build` ) );
+
+
+
+
 app.use(session({
     resave: false,
     saveUninitialized: true,
@@ -44,6 +49,7 @@ app.delete('/api/item/:id', itemCtrl.deleteItem)
 app.get('/api/cart', cartCtrl.deleteItems)
 app.post('/api/cart', cartCtrl.addToCart)
 app.delete('/api/cart/:id', cartCtrl.deleteItem)
+
 
 
 
