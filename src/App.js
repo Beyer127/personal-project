@@ -37,15 +37,6 @@ class App extends React.Component {
               <a className='link' href="http://localhost:3000/#/"> SIGN UP</a>
               <a className='link' href="http://localhost:3000/#/addpost"> SELL</a>
               <a className='link' href="http://localhost:3000/#/posts"> SHOP</a>
-
-         
-          <span className="footer">HELP</span>
-          <span className="footer">TERMS</span>
-          <span className="footer">PRIVACY</span>
-          <span className="footer main">OFFER UP</span>
-          <span className="footer">CONTACT</span>
-          <span className="footer">ABOUT</span>
-          <span className="footer">PRICING</span>
          
           </nav>
      
