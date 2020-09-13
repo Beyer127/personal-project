@@ -1,6 +1,26 @@
 const bcrypt = require('bcrypt')
+// const nodemailer = require('nodemailer')
+
+// const {EMAIL, PASSWORD} = process.env
 
 module.exports = {
+//     email: async (req, res) => {
+//         const { name, message, email, title, image } = req.body
+
+//     try {
+//         let transporter = nodemailer.createTransport({
+//             service: 'gmail',
+//             auth: {
+//                 user: EMAIL,
+//                 pass: PASSWORD
+//             }
+//         })
+
+//         let info = await transporter.sendMail({
+//             from: `'${name}' <$`
+//         })
+    
+
     
     register: async (req, res) => {
         const db = req.app.get('db')

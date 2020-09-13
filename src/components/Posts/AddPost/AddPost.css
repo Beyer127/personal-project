@@ -5,27 +5,31 @@
     font-family: 'Fredoka One', cursive;
   } 
 
+
+
   
 
   h1{
       padding-top: 25px;
       color: rgb(73, 67, 67);
   }
+
+
+
+
   #input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    height: 35vh;
     border: none;
   }
 
 
-  #button{
+  #addPostButton{
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 25vw;
+      flex-direction: column;
+      justify-content: space-between;
   }
 
   

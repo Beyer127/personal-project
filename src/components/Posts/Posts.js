@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import './Posts.css'
-import {Card} from 'react-bootstrap'
-import {Button} from 'react-bootstrap'
 import {addToCart} from '../../redux/reducer'
 import {connect} from 'react-redux'
 import {editPost} from '../../redux/editReducer'
@@ -72,29 +70,25 @@ class Posts extends Component{
             
             return (
                 <div key={e.item_id}>
-                    <Card style={{ width: '18rem', height: '30rem'  }}>
-                        <Card.Img variant="top" src={e.image} />
-                        <Card.Body>
-                            <Card.Title>{e.item_name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">${e.price}</Card.Subtitle>
-                            <Card.Text>{e.description}</Card.Text>
-                            <hr></hr>
-                            <div id="buttons">
-                                <Button className="button" onClick={() => this.handleEdit(e)}>Edit</Button>
-                                <Button className="button" onClick={() => {this.props.addToCart(e)}}>Add to cart</Button>
-                                <Button className="button" onClick={() => this.deleteItem(e.item_id)}>Delete</Button>
-                            </div>
-                        </Card.Body>
-                        </Card>
+                    <img src={e.image}></img>
+                    <h4>{e.item_name}</h4>
+                    <p>{e.price}</p>
+                    <p>{e.description}</p>
+                    <hr></hr>
+                    <div id="buttons">
+                        <button className="button" onClick={() => this.handleEdit(e)}>Edit</button>
+                        <button className="button" onClick={() => {this.props.addToCart(e)}}>Add to cart</button>
+                        <button className="button" onClick={() => this.deleteItem(e.item_id)}>Delete</button>
+                    </div>
+                        
                 </div>
             )
         })
         return(
             <div className="container">
-                <div className="row">
-                    {newItem}   
-                </div>
+                {newItem}   
             </div>
+               
         )
     }
 }

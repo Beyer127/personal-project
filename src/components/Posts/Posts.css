@@ -6,29 +6,18 @@
   }
 
 
-
-.newItem{
-    padding: 10px 0px;
-    margin-bottom: 15vh;
+img{
+    width: 18rem;
+    height: 18rem;
 }
 
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 10px;
-    text-align: center;
-    height: 71vh;
-}
+
 
 .container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 10px;
     text-align: center;
-    height: 71vh;
-    
+    align-items: center;
+    padding-top: 75px;
 }
 
 
@@ -38,12 +27,13 @@
     width: 15rem;
 }
 
-.button{
-    width: 100%;
-}
+
+
+
 
 hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+

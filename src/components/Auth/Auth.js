@@ -108,7 +108,7 @@ class Auth extends Component{
                       placeholder="Password"
                       onChange={(e) => this.changeHandler(e)}
                     ></input>
-                    <div className="buttons">
+                    <div id="buttons">
                       <button  onClick={this.register}>Register</button>
                       <button onClick={this.toggle}>Already A User</button>
                     </div>

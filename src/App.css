@@ -5,6 +5,8 @@
     font-family: 'Fredoka One', cursive;
   }
 
+
+
 .container{
     display: flex;
 }
@@ -121,6 +123,11 @@ span, i{
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    #footer{
+        display: flex;
+        flex-direction: column;
     }
 }
 

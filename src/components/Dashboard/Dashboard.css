@@ -20,7 +20,6 @@
   .first-img{
     width: 100vw;
     height: 75vh;
-    padding-bottom: 50px;
   }
 
   .second-img{
@@ -29,11 +28,16 @@
   }
 
 
-  #buttons{
+  .dash-buttons{
     display: flex;
-    justify-content: center;
-    border: none;    
+    justify-content: center;   
+    background-color: rgb(66, 66, 66);
   }
+
+.dash-buttons{
+  text-decoration: none;
+  color: black;
+}
 
 
 

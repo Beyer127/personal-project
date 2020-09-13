@@ -51,8 +51,8 @@ class AddPost extends Component {
                         <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
                         <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
                         <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
-                        <div id="button">
-                            <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add to inventory</button>
+                        <div id="addPostButton">
+                            <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add Post</button>
                             <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>
                         </div>
                         </div>
