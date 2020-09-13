@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import './Dashboard.css'
+import './Dashboard.scss'
 
 class Dashboard extends Component {
     constructor(){

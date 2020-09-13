@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux';
 import {editPost} from './../redux/editReducer'
-import './EditPost.css'
+import './EditPost.scss'
 
 class EditPost extends Component {
     constructor(){
