@@ -14,19 +14,19 @@ module.exports = {
             const hash = bcrypt.hashSync(password, salt)
             const newUser = await db.users.add_user([firstName, lastName, email, hash])
 
-            // const mailOptions = {
-            //     from: "nolan.test245@gmail.com",
-            //     to: email,
-            //     subject: "Nice Nodemailer test",
-            //     text: "Hey there, it’s our first message sent with Nodemailer ;) ",
-            //     html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer",
-            //   };
-            //   transporter.sendMail(mailOptions, (error, info) => {
-            //     if (error) {
-            //       return console.log(error);
-            //     }
-            //     console.log("Email sent successfully!");
-            //   });
+            const mailOptions = {
+                from: "nolanbeyer40@gmail.com",
+                to: email,
+                subject: "Nice Nodemailer test",
+                text: "Hey there, it’s our first message sent with Nodemailer ;) ",
+                html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer",
+              };
+              transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                  return console.log(error);
+                }
+                console.log("Email sent successfully!");
+              });
 
             req.session.user = newUser[0]
             res.status(200).send(newUser[0])
