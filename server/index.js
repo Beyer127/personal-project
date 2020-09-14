@@ -7,13 +7,20 @@ const {CONNECTION_STRING, SERVER_PORT, SESSION_SECRET} = process.env
 const authCtrl = require('./controller/authController')
 const itemCtrl = require('./controller/itemCtrl')
 const cartCtrl = require('./controller/cartCtrl')
+const nodemailer = require('nodemailer')
 
 const app = express()
 app.use(express.json())
 
 app.use( express.static( `${__dirname}/../build` ) );
 
-
+// const transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//            user: EMAIL,
+//            pass: PASSWORD
+//        }
+//    });
 
 
 app.use(session({
@@ -30,6 +37,7 @@ massive({
     ssl: {rejectUnauthorized: false}
 }).then(db => {
     app.set('db', db)
+    app.set('transporter', transporter)
     console.log('connected to database')
     app.listen(SERVER_PORT, () => console.log(`server connected on port ${SERVER_PORT}`))
 }).catch(err => {

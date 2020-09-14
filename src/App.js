@@ -27,10 +27,10 @@ class App extends React.Component {
         <nav className="desktop-menu">
             <span><i className="fas fa-user"></i> <a className='link' href="http://localhost:3000/#/"> LOGIN</a></span>
             <span><i className="fas fa-user-plus"></i> <a className='link' href="http://localhost:3000/#/"> SIGN UP</a></span>
-            <span><i className="fas fa-camera"></i> <a className='link' href="http://localhost:3000/#/addpost"> SELL</a></span>
+            <span><i className="fas fa-camera"></i> <a className='link' href="http://localhost:3000/#/addpost"> POST</a></span>
             <span><i className="fas fa-money-check"></i> <a className='link' href="http://localhost:3000/#/posts"> SHOP</a></span>
         </nav>
-        <div className="dropdown" onClick={this.toggleDropDown}><i class="fas fa-bars"></i></div>
+        <div className="dropdown" onClick={this.toggleDropDown}><i class="fas fa-bars burger"></i></div>
         { this.state.dropDown ? (
             <nav className="mobile-menu">
               <a className='link' href="http://localhost:3000/#/"> LOGIN</a>

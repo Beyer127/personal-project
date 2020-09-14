@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Card} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 import {deleteFromCart} from '../../redux/reducer'
+import './Cart.scss'
 
 
 class Cart extends Component{
@@ -13,8 +14,8 @@ class Cart extends Component{
                 {this.props.userReducer.cart.map(e => {
                     return (
                        
-                              <div key={e.item_id}>
-                    <Card style={{ width: '18rem' }}>
+                        <div className="container" key={e.item_id}>
+                         <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={e.image} />
                         <Card.Body>
                             <Card.Title>{e.itemName}</Card.Title>

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Fredoka One', cursive;
+    background-color: rgb(175, 175, 175);;
   }
 
 
@@ -44,6 +45,7 @@ span, i{
     padding-right: 5px;
     font-size: 15px;
     text-decoration: none;
+    background-color: rgb(46, 172, 165);
 }
 
 .link{
@@ -58,10 +60,7 @@ span, i{
 }
 
 
-/* body{
-    min-height: 200vh;
 
-} */
 
 .app{
     min-height: 100vh;
@@ -100,7 +99,29 @@ span, i{
     display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
+    .footer{
+        font-size: 10px;
+    }
+
+    span,i{
+        font-size: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo{
+        font-size: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .link{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 400px) {
     .desktop-menu {
         display: none;
     }
@@ -110,6 +131,8 @@ span, i{
         font-size: 25px;
         cursor: pointer;
     }
+
+    
 
     .mobile-menu{
         display: initial;
@@ -123,11 +146,21 @@ span, i{
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        background-color: rgb(46, 172, 165);
+
+    }
+
+    div:nth-child(3){
+     background-color: rgb(46, 172, 165);
+        
     }
 
     #footer{
         display: flex;
-        flex-direction: column;
+    }
+
+    .footer{
+        font-size: 5px;
     }
 }
 

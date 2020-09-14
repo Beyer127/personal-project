@@ -72,7 +72,7 @@ class Posts extends Component{
             
             return (
                 <div key={e.item_id}>
-                              <Card style={{ width: '18rem', height: '30rem'  }}>
+                              <Card style={{ width: '18rem', height: '40rem'  }}>
                         <Card.Img variant="top" src={e.image} />
                         <Card.Body>
                             <Card.Title>{e.item_name}</Card.Title>
