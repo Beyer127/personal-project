@@ -37,7 +37,7 @@ massive({
     ssl: {rejectUnauthorized: false}
 }).then(db => {
     app.set('db', db)
-    app.set('transporter', transporter)
+    // app.set('transporter', transporter)
     console.log('connected to database')
     app.listen(SERVER_PORT, () => console.log(`server connected on port ${SERVER_PORT}`))
 }).catch(err => {

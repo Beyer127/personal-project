@@ -5,7 +5,7 @@ module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db')
         const {firstName, lastName, email, password} = req.body
-        const transporter = req.app.get("transporter");
+        // const transporter = req.app.get("transporter");
         let user = await db.users.get_users(email)
         if(user[0]){
             res.status(409).send('user already exists')
@@ -14,19 +14,19 @@ module.exports = {
             const hash = bcrypt.hashSync(password, salt)
             const newUser = await db.users.add_user([firstName, lastName, email, hash])
 
-            const mailOptions = {
-                from: "nolan.test245@gmail.com",
-                to: email,
-                subject: "Nice Nodemailer test",
-                text: "Hey there, it’s our first message sent with Nodemailer ;) ",
-                html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer",
-              };
-              transporter.sendMail(mailOptions, (error, info) => {
-                if (error) {
-                  return console.log(error);
-                }
-                console.log("Email sent successfully!");
-              });
+            // const mailOptions = {
+            //     from: "nolan.test245@gmail.com",
+            //     to: email,
+            //     subject: "Nice Nodemailer test",
+            //     text: "Hey there, it’s our first message sent with Nodemailer ;) ",
+            //     html: "<b>Hey there! </b><br> This is our first message sent with Nodemailer",
+            //   };
+            //   transporter.sendMail(mailOptions, (error, info) => {
+            //     if (error) {
+            //       return console.log(error);
+            //     }
+            //     console.log("Email sent successfully!");
+            //   });
 
             req.session.user = newUser[0]
             res.status(200).send(newUser[0])

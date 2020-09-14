@@ -47,10 +47,10 @@ class AddPost extends Component {
                         <h1>Add Post</h1>
                     <div className="container">
                         <div id="input">
-                        <input onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
-                        <input onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
-                        <input onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
-                        <input onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
+                        <input id="addPost" onChange={(e) => this.handleChange(e)} placeholder="item" value={itemName} name='itemName' />
+                        <input id="addPost" onChange={(e) => this.handleChange(e)} placeholder="image" value={image} name='image' />
+                        <input id="addPost" onChange={(e) => this.handleChange(e)} placeholder="description" value={description} name='description' />
+                        <input id="addPost" onChange={(e) => this.handleChange(e)} placeholder="price" value={price} name='price' />
                         <div id="addPostButton">
                             <button onClick={() => {this.addPost(itemName, image, price, description)}} >Add Post</button>
                             <button onClick={() => this.editItem(itemName, image, price, description, this.props.match.params.id)}>edit</button>

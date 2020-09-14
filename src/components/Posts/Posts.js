@@ -4,7 +4,7 @@ import './Posts.scss'
 import {addToCart} from '../../redux/reducer'
 import {connect} from 'react-redux'
 import {editPost} from '../../redux/editReducer'
-import {Card} from 'react-bootstrap'
+import {Card, Row} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
 
@@ -63,7 +63,7 @@ class Posts extends Component{
     }
 
 
-
+  
 
     render(){
         // const {itemName, image, price, description, id} = this.state
@@ -92,8 +92,10 @@ class Posts extends Component{
         })
         return(
             <div className="container">
-                {newItem}   
-            </div>
+                <div className="row">
+                     {newItem}   
+                    </div>
+                </div>
                
         )
     }

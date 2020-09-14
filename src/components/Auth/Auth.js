@@ -54,7 +54,7 @@ class Auth extends Component{
                 {!this.state.newUser ? (
                   
                   <div id="inputs">
-                  <h1>Login</h1>
+                  <h1 className='login'>Login</h1>
                     <input className="inputs"
                       name="email"
                       type="text"

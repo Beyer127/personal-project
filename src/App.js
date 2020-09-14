@@ -29,6 +29,7 @@ class App extends React.Component {
             <span><i className="fas fa-user-plus"></i> <a className='link' href="http://localhost:3000/#/"> SIGN UP</a></span>
             <span><i className="fas fa-camera"></i> <a className='link' href="http://localhost:3000/#/addpost"> POST</a></span>
             <span><i className="fas fa-money-check"></i> <a className='link' href="http://localhost:3000/#/posts"> SHOP</a></span>
+            <span><i class="fas fa-shopping-cart"></i> <a className='link' href="http://localhost:3000/#/cart"> CART</a></span>
         </nav>
         <div className="dropdown" onClick={this.toggleDropDown}><i class="fas fa-bars burger"></i></div>
         { this.state.dropDown ? (
@@ -37,6 +38,7 @@ class App extends React.Component {
               <a className='link' href="http://localhost:3000/#/"> SIGN UP</a>
               <a className='link' href="http://localhost:3000/#/addpost"> SELL</a>
               <a className='link' href="http://localhost:3000/#/posts"> SHOP</a>
+              <a className='link' href="http://localhost:3000/#/cart"> CART</a>
          
           </nav>
      
