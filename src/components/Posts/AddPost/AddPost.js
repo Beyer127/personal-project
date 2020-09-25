@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import './AddPost.scss'
+import './AddPost.css'
 
 class AddPost extends Component {
     constructor(){
