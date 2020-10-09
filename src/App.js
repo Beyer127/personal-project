@@ -34,11 +34,11 @@ class App extends React.Component {
         <div className="dropdown" onClick={this.toggleDropDown}><i class="fas fa-bars burger"></i></div>
         { this.state.dropDown ? (
             <nav className="mobile-menu">
-              <a className='link' href="http://localhost:3000/#/"> LOGIN</a>
-              <a className='link' href="http://localhost:3000/#/"> SIGN UP</a>
-              <a className='link' href="http://localhost:3000/#/addpost"> SELL</a>
-              <a className='link' href="http://localhost:3000/#/posts"> SHOP</a>
-              <a className='link' href="http://localhost:3000/#/cart"> CART</a>
+              <a className='link' href={this.props.history.push('/login')}> LOGIN</a>
+              <a className='link' href={this.props.history.push('/signup')}> SIGN UP</a>
+              <a className='link' href={this.props.history.push('/post')}> SELL</a>
+              <a className='link' href={this.props.history.push('/shop')}> SHOP</a>
+              <a className='link' href={this.props.history.push('/cart')}> CART</a>
          
           </nav>
      
