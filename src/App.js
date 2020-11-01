@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import routes from './routes'
+import {Link} from 'react-router-dom'
 
 class App extends React.Component {
   constructor(){
@@ -25,20 +26,20 @@ class App extends React.Component {
     
             <span className="logo">OFFER UP</span>
         <nav className="desktop-menu">
-            <span><i className="fas fa-user"></i> <a className='link' href="http://localhost:3000/#/"> LOGIN</a></span>
-            <span><i className="fas fa-user-plus"></i> <a className='link' href="http://localhost:3000/#/"> SIGN UP</a></span>
-            <span><i className="fas fa-camera"></i> <a className='link' href="http://localhost:3000/#/addpost"> POST</a></span>
-            <span><i className="fas fa-money-check"></i> <a className='link' href="http://localhost:3000/#/posts"> SHOP</a></span>
-            <span><i class="fas fa-shopping-cart"></i> <a className='link' href="http://localhost:3000/#/cart"> CART</a></span>
+            <span><i className="fas fa-user"></i> <Link className='link' to={'/login'}> LOGIN</Link></span>
+            <span><i className="fas fa-user-plus"></i> <Link className='link' to={'/'}> SIGN UP</Link></span>
+            <span><i className="fas fa-camera"></i> <Link className='link' to={'/addPost'}> POST</Link></span>
+            <span><i className="fas fa-money-check"></i> <Link className='link' to={'/posts'}> SHOP</Link></span>
+            <span><i class="fas fa-shopping-cart"></i> <Link className='link' to={'/cart'}> CART</Link></span>
         </nav>
         <div className="dropdown" onClick={this.toggleDropDown}><i class="fas fa-bars burger"></i></div>
         { this.state.dropDown ? (
             <nav className="mobile-menu">
-              <a className='link' href={this.props.history.push('/login')}> LOGIN</a>
-              <a className='link' href={this.props.history.push('/signup')}> SIGN UP</a>
-              <a className='link' href={this.props.history.push('/post')}> SELL</a>
-              <a className='link' href={this.props.history.push('/shop')}> SHOP</a>
-              <a className='link' href={this.props.history.push('/cart')}> CART</a>
+              <Link className='link' to={'/login'}> LOGIN</Link>
+              <Link className='link' to={'/'}> SIGN UP</Link>
+              <Link className='link' to={'/addPost'}> SELL</Link>
+              <Link className='link' to={'/posts'}> SHOP</Link>
+              <Link className='link' to={'/cart'}> CART</Link>
          
           </nav>
      
