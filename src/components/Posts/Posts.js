@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import './Posts.css'
 import {addToCart} from '../../redux/reducer'
 import {connect} from 'react-redux'
 import {editPost} from '../../redux/editReducer'

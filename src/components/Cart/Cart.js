@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {Card} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 import {deleteFromCart} from '../../redux/reducer'
-import './Cart.css'
 
 
 class Cart extends Component{

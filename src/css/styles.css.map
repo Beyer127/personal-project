@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,CAAC,CAAA;EACG,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,WAAW,EAAE,sBAAsB;CACtC",
+    "sources": [
+        "../scss/styles.scss",
+        "../scss/_addPost.scss",
+        "../scss/_auth.scss",
+        "../scss/_cart.scss",
+        "../scss/_config.scss",
+        "../scss/_dashboard.scss",
+        "../scss/_editPost.scss",
+        "../scss/_posts.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

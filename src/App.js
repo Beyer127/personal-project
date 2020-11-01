@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import routes from './routes'
 import {Link} from 'react-router-dom'
+import './css/styles.css'
 
 class App extends React.Component {
   constructor(){
