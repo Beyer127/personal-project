@@ -1,24 +1,24 @@
 h1 {
-	padding-top: 25px;
-	color: rgb(73, 67, 67);
+  padding-top: 25px;
+  color: rgb(73, 67, 67);
 }
 
 #input {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 100vw;
-	border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  border: none;
 }
 
 #addPostButton {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (max-width: 400px) {
-	#inputs {
-		padding: 20px;
-	}
+  #inputs {
+    padding: 20px;
+  }
 }
